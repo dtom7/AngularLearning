@@ -1,5 +1,4 @@
-/*                  */
-label {
-  width:80px;
-  display: inline-block;
+.done-true {
+  text-decoration: line-through;
+  color: grey;
 }

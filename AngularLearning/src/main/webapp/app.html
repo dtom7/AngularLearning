@@ -16,29 +16,38 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container"  ng-controller="TODOController">
 		<!-- Container Start -->
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<h3>Percentage Calculator</h3>
+				<h3>TODO List</h3>
 				<hr>
 			</div>
 		</div>
-		<div class="row" ng-controller="FinanceController">
-			<div class="col-md-12">
-				<label>Salary:</label> <input type="text" ng-model="salary">
-				<br> <br> <label>Percentage:</label> <input type="text"
-					ng-model="percentage">
-				<hr>
-				<h4>Amount is {{result()}}</h4>
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" class="form-control" ng-model="newTaskDescription">
+				<br>
+				<button type="button" class="btn btn-primary" ng-click="addTask()">Add Task</button>
 			</div>
 		</div>
-		<div class="row" ng-controller="DateTimeController">
-			<div class="col-md-12">
-				<h4>{{greeting}} the time is: {{now | date:'medium'}}</h4>
-				<h4>Amount is {{result()}}</h4>
+		<div class="row">
+					
+			<div class="col-xs-12">
 				<hr>
+
+				<table class="table table-bordered">
+					<tbody>
+						<tr ng-repeat="task in taskList">
+							<td><input type="checkbox" ng-model="task.done"></td>
+							<td class="done-{{task.done}}">{{task.description}}</td>
+							<td><button type="button" class="btn btn-primary btn-xs" ng-click="deleteTask(task)">Delete Task</button></td>
+						</tr>
+					</tbody>
+				</table>
+
 			</div>
+			
 		</div>
 
 	</div>
