@@ -14,7 +14,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-controller="FinanceController">
+<body>
 
 	<div class="container">
 		<!-- Container Start -->
@@ -24,14 +24,20 @@
 				<hr>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" ng-controller="FinanceController">
 			<div class="col-md-12">
 				<label>Salary:</label> <input type="text" ng-model="salary">
-				<br>
-				<br>
-				<label>Percentage:</label> <input type="text" ng-model="percentage">
+				<br> <br> <label>Percentage:</label> <input type="text"
+					ng-model="percentage">
 				<hr>
 				<h4>Amount is {{result()}}</h4>
+			</div>
+		</div>
+		<div class="row" ng-controller="DateTimeController">
+			<div class="col-md-12">
+				<h4>{{greeting}} the time is: {{now | date:'medium'}}</h4>
+				<h4>Amount is {{result()}}</h4>
+				<hr>
 			</div>
 		</div>
 
@@ -44,9 +50,7 @@
 		src="resources/js/bootstrap/bootstrap.js"></script>
 	<script type="text/javascript"
 		src="resources/js/angular/angular.1.2.16.js"></script>
-	<script type="text/javascript"
-		src="resources/custom/js/app.js"></script>
-	<script type="text/javascript"
-		src="resources/custom/js/controllers.js"></script>
+	<script type="text/javascript" src="resources/custom/js/app.js"></script>
+	<script type="text/javascript" src="resources/custom/js/controllers.js"></script>
 </body>
 </html>
