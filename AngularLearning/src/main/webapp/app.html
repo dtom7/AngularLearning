@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<div class="container"  ng-controller="TODOController">
+	<div class="container" ng-controller="TODOController">
 		<!-- Container Start -->
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -26,13 +26,14 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<input type="text" class="form-control" ng-model="newTaskDescription">
-				<br>
-				<button type="button" class="btn btn-primary" ng-click="addTask()">Add Task</button>
+				<input type="text" class="form-control"
+					ng-model="newTaskDescription"> <br>
+				<button type="button" class="btn btn-primary" ng-click="addTask()">Add
+					Task</button>
 			</div>
 		</div>
 		<div class="row">
-					
+
 			<div class="col-xs-12">
 				<hr>
 
@@ -41,13 +42,38 @@
 						<tr ng-repeat="task in taskList">
 							<td><input type="checkbox" ng-model="task.done"></td>
 							<td class="done-{{task.done}}">{{task.description}}</td>
-							<td><button type="button" class="btn btn-primary btn-xs" ng-click="deleteTask(task)">Delete Task</button></td>
+							<td><button type="button" class="btn btn-primary btn-xs"
+									ng-click="deleteTask(task)">Delete Task</button>
+								<button type="button" class="btn btn-primary btn-xs"
+									ng-click="editTask(task)">Edit Task</button></td>
 						</tr>
 					</tbody>
 				</table>
 
 			</div>
-			
+
+		</div>
+
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">Edit Task</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="form-control"
+							ng-model="editTaskDescription"> <br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-xs" ng-click="saveEditTask()">Save</button>
+						<button type="button" class="btn btn-primary btn-xs" ng-click="cancelEditTask()">Cancel</button>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</div>
