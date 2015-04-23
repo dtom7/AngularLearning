@@ -1,24 +1,6 @@
 angular.module('myApp.controllers', []);
 
-angular.module('myApp.controllers').controller('FinanceController', function($rootScope, $scope) {
-	$scope.salary = 0;
-	$scope.percentage = 0;
-	$scope.result = function() {
-		return $scope.salary * $scope.percentage * 0.01;
-	};
-	$scope.$watch('percentage', function(newValue, oldValue) {
-		console.log('watch: ' + newValue + ' -- ' + oldValue);
-		if (newValue == 100) {
-			window.alert('100%');
-			$scope.salary = 100;
-		}
-	});
-	$scope.$watch(function() {
-		// do something here
-		console.log('called in a digest cycle');
-		return;
-	});
-});
+// TODO Controller
 
 var Task = function(description) {
 	this.done = 'N';
@@ -59,15 +41,25 @@ angular.module('myApp.controllers').controller('TODOController', [ '$scope', fun
 		}
 		$('#myModal').modal({
 			keyboard : false
-		})
-	}
+		});
+	};
 	$scope.saveEditTask = function() {
 		$scope.taskList[$scope.modalIndex].description = $scope.editTaskDescription;
 		$scope.editTaskDescription = '';
 		$('#myModal').modal('toggle');
-	}
+	};
 	$scope.cancelEditTask = function() {
 		$scope.editTaskDescription = '';
 		$('#myModal').modal('toggle');
-	}
+	};
 } ]);
+
+//ROUTE Controller
+angular.module('myApp.controllers').controller('Controller1', [ '$scope', function($scope) {
+	console.log('Controller1');
+} ]);
+
+angular.module('myApp.controllers').controller('Controller2', [ '$scope', function($scope) {
+	console.log('Controller2');
+} ]);
+
