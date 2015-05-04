@@ -54,12 +54,13 @@ angular.module('myApp.controllers').controller('TODOController', [ '$scope', fun
 	};
 } ]);
 
-//ROUTE Controller
-angular.module('myApp.controllers').controller('Controller1', [ '$scope', function($scope) {
-	console.log('Controller1');
-} ]);
+// ROUTE Controller
 
-angular.module('myApp.controllers').controller('Controller2', [ '$scope', function($scope) {
-	console.log('Controller2');
-} ]);
+angular.module('myApp.controllers').controller('TestController', [ '$scope', '$log', function($scope, $log) {
+	
+	$scope.outerval = 'mydata';
+	$scope.func = function() {
+		$log.log('invoked!');
+	};
 
+} ]);
